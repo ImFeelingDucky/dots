@@ -3,7 +3,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Special Configuration
-xwayland disable
+# xwayland disable
 
 ### Variables
 #
@@ -245,6 +245,10 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+
+    mode hide
+    hidden_state hide
+    modifier $mod
 }
 
 include /etc/sway/config.d/*

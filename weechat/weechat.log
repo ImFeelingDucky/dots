@@ -1,17 +1,17 @@
-[2019-05-30 19:19:13] WeeChat 2.4 (compiled on Feb 17 2019 15:38:24)
-[2019-05-30 19:19:13] Reading configuration file sec.conf
-[2019-05-30 19:19:13] Reading configuration file weechat.conf
-[2019-05-30 19:19:13] Reading configuration file plugins.conf
-[2019-05-30 19:19:13] Reading configuration file charset.conf
-[2019-05-30 19:19:13] Reading configuration file logger.conf
-[2019-05-30 19:19:13] Reading configuration file exec.conf
-[2019-05-30 19:19:13] Reading configuration file trigger.conf
-[2019-05-30 19:19:13] Reading configuration file alias.conf
-[2019-05-30 19:19:13] Reading configuration file buflist.conf
-[2019-05-30 19:19:13] Reading configuration file fifo.conf
-[2019-05-30 19:19:13] Reading configuration file xfer.conf
-[2019-05-30 19:19:13] Reading configuration file irc.conf
-[2019-05-30 19:19:13] Reading configuration file relay.conf
-[2019-05-30 19:19:13] Reading configuration file script.conf
-[2019-05-30 19:19:13] Reading configuration file fset.conf
-[2019-05-30 19:19:13] irc: connecting to server chat.freenode.net/6697 (SSL)...
+[2019-06-14 12:39:00] WeeChat 2.5 (compiled on Jun  8 2019 20:18:09)
+[2019-06-14 12:39:00] Reading configuration file sec.conf
+[2019-06-14 12:39:00] Reading configuration file weechat.conf
+[2019-06-14 12:39:00] Reading configuration file plugins.conf
+[2019-06-14 12:39:00] Reading configuration file charset.conf
+[2019-06-14 12:39:00] Reading configuration file logger.conf
+[2019-06-14 12:39:00] Reading configuration file exec.conf
+[2019-06-14 12:39:00] Reading configuration file trigger.conf
+[2019-06-14 12:39:00] Reading configuration file alias.conf
+[2019-06-14 12:39:00] Reading configuration file buflist.conf
+[2019-06-14 12:39:00] Reading configuration file fifo.conf
+[2019-06-14 12:39:00] Reading configuration file xfer.conf
+[2019-06-14 12:39:00] Reading configuration file irc.conf
+[2019-06-14 12:39:00] Reading configuration file relay.conf
+[2019-06-14 12:39:00] Reading configuration file script.conf
+[2019-06-14 12:39:00] Reading configuration file fset.conf
+[2019-06-14 12:39:00] irc: connecting to server chat.freenode.net/6697 (SSL)...
