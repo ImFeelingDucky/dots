@@ -21,13 +21,13 @@ set $term alacritty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-# TODO: Setup an application launcher
-set $menu dmenu_path | dmenu | xargs swaymsg exec
+# Running Rofi in run application mode as the application launcher
+set $menu /bin/rofi -show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/max/Downloads/ghost-in-the-shell-wallpaper-1366×768.jpg fill
 #
 # Example configuration:
 #
@@ -58,7 +58,7 @@ default_border pixel 5
 # Example configuration:
 #
     input "1267:91:Elan_Touchpad" {
-        dwt enabled
+        dwt disabled
         tap enabled
         natural_scroll enabled
         middle_emulation enabled
@@ -127,11 +127,11 @@ default_border pixel 5
 # Workspaces:
 #
     # Set workspace names
-    set $w1 Browse
-    set $w2 Create
-    set $w3 Configure
-    set $w4 Chat
-    set $w5 Monitor
+    set $w1 1
+    set $w2 2
+    set $w3 3
+    set $w4 4
+    set $w5 5
     set $w6 6
     set $w7 7
     set $w8 8
@@ -236,7 +236,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    swaybar_command waybar
 
     # TODO: Show weather in statusbar
 
