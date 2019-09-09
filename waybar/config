@@ -1,43 +1,69 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar at the bottom of your screen
-    "height": 24, // Waybar height
+    "height": 50, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "clock"],
+    "modules-center": ["custom/video"],
+    "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock"],
+     "custom/days": {
+         "interval": 3600, // Remove this if your script is endless and write in loop
+	 "format": "a video of spoilt saints ® {}",
+	 "tooltip": false,
+	 "on-click": "echo day `date +%j` of `date +%Y`"
+     },
+    "custom/video": {
+	 "format": "a video of spoilt saints ®",
+	 "format-alt": "video ®",
+	 "tooltip": false
+	 // "on-click": "notify-send.sh 'I am' 'and so you are'"
+    },
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
         "format": "{icon}",
         "format-icons": {
-            "1:Browse": "",
-            "2:Create": "",
-            "3:Configure": "",
-            "4:work": "",
-            "5:music": "",
-            "6:docs": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
             "urgent": "",
-            "focused": "",
-            "default": ""
-        }
+            "focused": ""
+            // "1": "",
+            // "2": "",
+            // "3": "",
+            // "4": "",
+            // "5": "",
+            // "6": "",
+            // "urgent": "",
+            // "focused": "",
+            // "default": ""
+        },
+	 "tooltip": false
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "<span style=\"italic\">{}</span>",
+	 "tooltip": false
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+	"tooltip": false
     },
     "clock": {
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+	"tooltip": false
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "{usage}% ",
+	"tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+	"tooltip": false
     },
     "battery": {
         "bat": "BAT0",
@@ -46,20 +72,24 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        // "format-good": "", // An empty format will hide the module
+        "format": "{capacity}%",
+        "format-charging": "{capacity}+", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
+    "max-length": 30,
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-wifi": "{essid} {signalStrength}%",
+	"format-alt": "-",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠",
+	"tooltip": false
     },
     "pulseaudio": {
         //"scroll-step": 1,
-        "format": "{volume}% {icon}",
+        "format": "V {volume}%",
+	"format-alt": "-",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
@@ -71,14 +101,23 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+	"tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "B {percent}%",
+        "format-alt": "-",
+        "format-icons": ["", ""],
+	"tooltip": false
     },
     "custom/spotify": {
         "format": " {}",
         "max-length": 40,
         "interval": 30, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
+        "exec-if": "pgrep spotify",
+	"tooltip": false
     }
 }
 

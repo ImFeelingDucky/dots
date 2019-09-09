@@ -1,4 +1,6 @@
 *.pyc
 **/logs
 **.log
+**/Cache
+**/GPUCache
 

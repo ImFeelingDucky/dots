@@ -16,13 +16,37 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
-set $term alacritty
+## Set preferred applications
+# terminal emulator
+set $term alacritty -e "fish"
 
-# Your preferred application launcher
+# application launcher
 # Note: it's recommended that you pass the final command to sway
 # Running Rofi in run application mode as the application launcher
 set $menu /bin/rofi -show drun
+
+# internet browser
+set $browser firefox-wayland
+
+# irc chat application
+set $irc weechat
+
+# media player
+set $media mpv
+
+## Start things when sway does
+
+# Start a user dbus session (mako needs one--check mako on Github)
+exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+# Start mako for notifications
+exec mako
+
+# TODO: Start firefox, weechat, etc automatically and in their own windows
+
+## Dropdown terminal
+bindsym $mod+z exec alacritty --class=launcher --dimensions 90 11
+
+for_window [app_id="launcher"] focus, floating enable, border pixel, opacity 0.8
 
 ### Output configuration
 #
@@ -39,11 +63,11 @@ output * bg /home/max/Downloads/ghost-in-the-shell-wallpaper-1366×768.jpg fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -54,9 +78,10 @@ output * bg /home/max/Downloads/ghost-in-the-shell-wallpaper-1366×768.jpg fill
 default_border pixel 5
 
 ### Input configuration
-#
-# Example configuration:
-#
+    input "7119:2:USB_Optical_Wheel_Mouse" {
+        dwt disabled
+    }
+
     input "1267:91:Elan_Touchpad" {
         dwt disabled
         tap enabled
@@ -77,15 +102,29 @@ default_border pixel 5
 # 
 # Basics:
 #
+    
+    bindsym $mod+m exec java -jar ~/.local/bin/minecraft/minecraft-launcher.jar
+    
     # start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+x exec $term
 
     # kill focused window
-    # remove shift to make it a bit easier to kill something
+    # Removed shift to make it a bit easier to kill something as this config doesn't have any close buttons so you have to use the hotkey
     bindsym $mod+q kill
 
     # start your launcher
     bindsym $mod+d exec $menu
+
+    # start Firefox
+    bindsym $mod+c exec $browser
+
+    bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%; # notify-send.sh 'Volume `awk -F\"[][]\" '/dB/ { print $2 }' <(amixer sget Master)`' --replace-file=/tmp/audio-up --expire-time=1000"
+    bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5%; # notify-send.sh 'Volume `awk -F\"[][]\" '/dB/ { print $2 }' <(amixer sget Master)`' --replace-file=/tmp/audio-up --expire-time=1000"
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    bindsym XF86MonBrightnessUp exec light -A 5
+    bindsym XF86MonBrightnessDown exec light -U 5
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -98,6 +137,7 @@ default_border pixel 5
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
+    # TODO: Exit menu with power options
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
@@ -164,7 +204,8 @@ default_border pixel 5
     # We just use 1-10 as the default.
     
     # Set specific applications to specific workspaces
-    # for_window [class="Firefox"] move to workspace $w1
+    for_window [class="Firefox"] move to workspace $w1
+
 #
 # Layout stuff:
 #
@@ -253,3 +294,4 @@ bar {
 }
 
 include /etc/sway/config.d/*
+include ~/.config/sway/*

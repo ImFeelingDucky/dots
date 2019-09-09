@@ -1,59 +1,57 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Fira Code", monospace;
-    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: white;
+    background: #F9D75F;
+    color: black;
 }
 
-#window {
-    font-weight: bold;
-}
-
-/*
 #workspaces {
-    padding: 0 5px;
+    padding: 0 6px;
 }
-*/
 
 #workspaces button {
-    padding: 0 5px;
+    color: black;
+    padding: 0 6px;
     background: transparent;
-    color: white;
-    border-top: 2px solid transparent;
+    transition: none;
 }
 
 #workspaces button.focused {
-    color: #c9545d;
-    border-top: 2px solid #c9545d;
+    /* text-shadow: 2px 4px black; */
+    text-shadow: 3px 4px black;
+
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: 3px 4px black;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: white;
 }
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
-    padding: 0 3px;
+    padding: 0 6px;
     margin: 0 2px;
 }
 
 #clock {
+    padding-right: 10px;
 }
 
 #battery {
 }
 
-#battery icon {
-    color: red;
-}
-
 #battery.charging {
+    /* text-shadow: 3px 4px black; */
 }
 
 @keyframes blink {
@@ -72,16 +70,10 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#cpu {
-}
-
-#memory {
-}
-
 #network {
 }
 
-#network.disconnected {
+#network.disconnected:not(.alt) {
     background: #f53c3c;
 }
 
@@ -95,6 +87,7 @@ window#waybar {
     color: rgb(102, 220, 105);
 }
 
-#tray {
+#custom-video, #custom-days {
+    font-size: 36px;
 }
 
