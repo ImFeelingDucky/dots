@@ -13,5 +13,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
 	fi
 fi
 
-source $HOME/.env
+source $HOME/.env_public
+source $HOME/.env_private
 
