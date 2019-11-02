@@ -1,9 +1,34 @@
 {
+    "terminal.integrated.shell.linux": "/bin/fish",
     "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fastScrollSensitivity": 4,
     "editor.mouseWheelScrollSensitivity": 0.5,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.home": "/usr/lib/jvm/openjdk-1.8.0_202/",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "diffEditor.renderSideBySide": false,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "window.menuBarVisibility": "toggle",
+    "files.autoSave": "afterDelay",
+    "editor.detectIndentation": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    },
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "numso.prettier-standard-vscode",
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }
