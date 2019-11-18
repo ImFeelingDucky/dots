@@ -1,6 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
+    "position": "top", // Waybar at the top of your screen
     "height": 50, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
@@ -54,11 +54,10 @@
 	"tooltip": false
     },
     "clock": {
+	// "interval": 1,
+        // "format": "{:%H:%M:%S}",
+        "format": "{:%H:%M}",
         "format-alt": "{:%Y-%m-%d}",
-	"tooltip": false
-    },
-    "cpu": {
-        "format": "{usage}% ",
 	"tooltip": false
     },
     "memory": {
@@ -68,17 +67,17 @@
     "battery": {
         "bat": "BAT0",
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}%",
+        "format-critical": "{capacity}!",
         "format-charging": "{capacity}+", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-    "max-length": 30,
+        "max-length": 30,
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} {signalStrength}%",
 	"format-alt": "-",
@@ -87,21 +86,14 @@
 	"tooltip": false
     },
     "pulseaudio": {
-        //"scroll-step": 1,
+        "scroll-step": 1,
         "format": "V {volume}%",
-	"format-alt": "-",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+        "format-bluetooth": "{volume}% ",
+        "format-muted": "-",
+        "states": {
+            "full": 99,
+            "zero": 0
         },
-        "on-click": "pavucontrol",
 	"tooltip": false
     },
     "backlight": {
