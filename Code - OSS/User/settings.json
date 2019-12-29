@@ -18,7 +18,6 @@
     "less.validate": false,
     "scss.validate": false,
     "window.menuBarVisibility": "toggle",
-    "files.autoSave": "afterDelay",
     "editor.detectIndentation": false,
     "[javascript]": {
         "editor.defaultFormatter": "numso.prettier-standard-vscode"
@@ -30,5 +29,16 @@
     "editor.tabSize": 2,
     "[html]": {
       "editor.defaultFormatter": "vscode.html-language-features"
-    }
+    },
+    "prettier.proseWrap": "always",
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "none",
+    "editor.formatOnSave": true,
+    "html.format.endWithNewline": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.iconTheme": "vscode-icons",
+    "python.jediEnabled": false
 }

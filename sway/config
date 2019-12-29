@@ -55,7 +55,8 @@ for_window [app_id="launcher"] focus, floating enable, border pixel, opacity 0.8
 output * bg "/home/max/Downloads/Dark Theme Wallpaper Only.png" fill
 
 # Work 24" Dell monitor
-output 'Dell Inc. DELL SE2419H 9XX45T2' pos 1366 -600 res 1920x1080
+# output 'Dell Inc. DELL SE2419H 9XX45T2' pos 1366 -600 res 1920x1080
+# output 'Dell Inc. DELL SE2419H 9XX45T2' pos -1920 -600 res 1920x1080
 
 # This laptop's screen
 output eDP-1 pos 0 0 res 1366x668
