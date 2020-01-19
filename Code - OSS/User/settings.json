@@ -40,5 +40,9 @@
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "workbench.iconTheme": "vscode-icons",
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "[php]": {
+      "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "liveServer.settings.donotShowInfoMsg": true
 }
