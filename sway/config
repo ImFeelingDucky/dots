@@ -58,8 +58,13 @@ output * bg "/home/max/Downloads/Dark Theme Wallpaper Only.png" fill
 # output 'Dell Inc. DELL SE2419H 9XX45T2' pos 1366 -600 res 1920x1080
 # output 'Dell Inc. DELL SE2419H 9XX45T2' pos -1920 -600 res 1920x1080
 
-# This laptop's screen
-output eDP-1 pos 0 0 res 1366x668
+# 1080p screen above
+output eDP-1 pos 0 0 res 1366x768
+output HDMI-A-1 pos -245 -1080 res 1920x1080
+
+# 1080p screen on left
+# output HDMI-A-1 pos 0 0 res 1920x1080
+# output eDP-1 pos 1920 500 res 1366x768
 
 #
 # Example configuration:
