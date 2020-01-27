@@ -18,7 +18,8 @@ set $right l
 
 ## Set preferred applications
 # terminal emulator
-set $term alacritty -e "fish"
+# set $term alacritty -e "fish"
+set $term kitty fish
 
 # application launcher
 # Note: it's recommended that you pass the final command to sway
