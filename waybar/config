@@ -15,7 +15,8 @@
      },
     "custom/video": {
 	 "format": "a video of spoilt saints ®",
-	 "format-alt": "video ®",
+	 // "format-alt": "video ®",
+	 "format-alt": "yeahh uhh",
 	 "tooltip": false
 	 // "on-click": "notify-send.sh 'I am' 'and so you are'"
     },

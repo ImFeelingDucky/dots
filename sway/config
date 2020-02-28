@@ -18,8 +18,8 @@ set $right l
 
 ## Set preferred applications
 # terminal emulator
-# set $term alacritty -e "fish"
-set $term kitty fish
+set $term alacritty -e "fish"
+# set $term kitty fish
 
 # application launcher
 # Note: it's recommended that you pass the final command to sway
@@ -27,7 +27,7 @@ set $term kitty fish
 set $menu /bin/rofi -show drun
 
 # internet browser
-set $browser firefox-wayland
+set $browser chromium
 
 # irc chat application
 set $irc weechat
@@ -60,8 +60,8 @@ output * bg "/home/max/Downloads/Dark Theme Wallpaper Only.png" fill
 # output 'Dell Inc. DELL SE2419H 9XX45T2' pos -1920 -600 res 1920x1080
 
 # 1080p screen above
-output eDP-1 pos 0 0 res 1366x768
-output HDMI-A-1 pos -245 -1080 res 1920x1080
+output eDP-1 pos 245 1080 res 1366x768
+output HDMI-A-1 pos 0 0 res 1920x1080
 
 # 1080p screen on left
 # output HDMI-A-1 pos 0 0 res 1920x1080
@@ -220,6 +220,9 @@ default_border pixel 5
     
     # Set specific applications to specific workspaces
     for_window [class="Firefox"] move to workspace $w1
+    for_window [class="Chromium"] move to workspace $w1
+
+    for_window [class="Code - OSS"] move to workspace $w2
 
 #
 # Layout stuff:
